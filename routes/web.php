@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('auth/google',[GoogleController::class,'loginwithgoogle'])->name('login');
+Route::get('auth/facebook',[GoogleController::class,'loginwithfacebook'])->name('facebook');
 
 Route::any('auth/google/callback',[GoogleController::class,'callbackfromgoogle'])->name('callback');
+Route::any('auth/facebook/callback',[GoogleController::class,'callbackfromfacebook'])->name('callback-facebook');
 
 Route::view('home','home')->name('home');
